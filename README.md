@@ -5,3 +5,5 @@ ip -6 addr show dev eth0
 #红米ax5开放ipv6端口  
 ip6tables -I forwarding_rule -p tcp --dport 3389 -j ACCEPT  
 ip6tables -I forwarding_rule -p udp --dport 3389 -j ACCEPT  
+#红米路由检查开放的ipv6端口
+ip6tables -L -v -n | grep "dpt" 
