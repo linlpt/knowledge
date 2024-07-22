@@ -5,5 +5,6 @@ ip -6 addr show dev eth0
 #红米ax5开放ipv6端口  
 ip6tables -I forwarding_rule -p tcp --dport 3389 -j ACCEPT  
 ip6tables -I forwarding_rule -p udp --dport 3389 -j ACCEPT  
+设置开机自启（使用到rc.local服务）        1、命令行输入    vi /etc/rc.local   2、按 i  进入编辑模式，然后使用方向键移动光标到exit 0 上方，将上方两行代码粘贴进入3、按键盘左上方ESC键，推出编辑模式，紧接着输入  :wq  并按回车即推出保存！  
 #红米路由检查开放的ipv6端口  
 ip6tables -L -v -n | grep "dpt"   
