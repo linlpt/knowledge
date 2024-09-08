@@ -10,3 +10,6 @@ ip6tables -I forwarding_rule -p udp --dport 56889 -j ACCEPT
 ip6tables -L -v -n | grep "dpt"   
 ### md转docx   
 python -c "import requests; exec(requests.get('https://raw.githubusercontent.com/linlpt/tool/main/md_to_docx.py').text)"
+### plex无法添加媒体库的原因
+你启动后没有被Plex认证为服务端。如果是docker安装的话，要添加一个环境变量PLEX_CLAIM，变量值是用账号登录Plex官网获得的token，有效时间4分钟，有效期内用token启动容器才能激活服务端功能。
+如果是其他平台，如群晖套件的plex，没有媒体库选项的话大概也是这个原因
