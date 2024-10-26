@@ -13,3 +13,6 @@ python -c "import requests; exec(requests.get('https://raw.githubusercontent.com
 ### plex无法添加媒体库的原因
 你启动后没有被Plex认证为服务端。如果是docker安装的话，要添加一个环境变量PLEX_CLAIM，变量值是用账号登录Plex官网获得的token，有效时间4分钟，有效期内用token启动容器才能激活服务端功能。
 如果是其他平台，如群晖套件的plex，没有媒体库选项的话大概也是这个原因
+### 挂载smb目录到本地
+sudo mount -t cifs -o username=****,password=*****,vers=3.0,uid=1000,gid=1001,file_mode=0777,dir_mode=0777 //192.168.0.111/other /vol1/1000/smb2
+其中uid和gid可以通过 id命令获取
