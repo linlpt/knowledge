@@ -16,3 +16,5 @@ python -c "import requests; exec(requests.get('https://raw.githubusercontent.com
 ### 挂载smb目录到本地
 sudo mount -t cifs -o username=****,password=*****,vers=3.0,uid=1000,gid=1001,file_mode=0777,dir_mode=0777 //192.168.0.111/other /vol1/1000/smb2   
 其中uid和gid可以通过 id命令获取
+### py去注释   
+python -c "import requests; exec(requests.get('https://raw.githubusercontent.com/linlpt/tool/refs/heads/main/%E9%99%A4%E5%8E%BB%E6%B3%A8%E9%87%8A.py').text)"
